@@ -4,8 +4,8 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=sinhaparth5&theme=monokai" alt="sinhaparth5" /></a> </p>
 
-- 🌱 I’m currently learning **.NET, Spring Boot and DevOps**
-- 💬 Ask me about **React and DevOps**
+- 🌱 I’m currently learning **.NET, Rust and DevOps**
+- 💬 Ask me about **.NET and DevOps**
 - 📫 How to reach me **contact@parthsinha.com**
 - 👨‍💻 All of my projects are available at **https://parthsinha.com**
 - 📄 Know about my experiences **https://parthsinha.com**
@@ -63,6 +63,7 @@
  <img src="https://cdn.worldvectorlogo.com/logos/cockroachdb.svg" alt="cockroachdb" width="40" height="40"/>
  <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/>
  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/>
+<img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Skills/Languages/rust-plain.svg" alt="Rust" width="40" height="40"/>
 </p>
 
 <h3 align="left">Stars</h3>
