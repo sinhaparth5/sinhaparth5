@@ -4,11 +4,11 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=sinhaparth5&theme=monokai" alt="sinhaparth5" /></a> </p>
 
-- 🌱 I’m currently learning **.NET, Rust and DevOps**
-- 💬 Ask me about **.NET and DevOps**
-- 📫 How to reach me **contact@parthsinha.com**
-- 👨‍💻 All of my projects are available at **https://parthsinha.com**
-- 📄 Know about my experiences **https://parthsinha.com**
+- 🌱 I’m currently learning **GoLang, Rust and R**
+- 💬 Ask me about **Web Dev**
+- 📫 How to reach me **parth_sinha@yahoo.com**
+- 👨‍💻 All of my projects are available at **https://projects.pksinha.co.uk**
+- 📄 Know about my experiences **https://pksinha.co.uk**
 
 <div> <a href="https://twitter.com/sinhparth555" target="_blank"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" target="_blank"></a>
 <a href="https://www.linkedin.com/in/parthsinha18" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
@@ -81,6 +81,7 @@
 <img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=sinhaparth5&theme=2077" height="180em" />
 <img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=sinhaparth5&theme=2077" height="180em" />
 <img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=sinhaparth5&theme=2077" height="180em" />
+![ProfileSvg](profile-3d-contrib/profile-season-animate.svg)
 </div>
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"><h2 align="left">⚡Activity Graph:</h2>
 <img align="center" src="https://github-readme-activity-graph.vercel.app/graph?username=sinhaparth5&theme=default"/>
