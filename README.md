@@ -81,7 +81,7 @@
 <img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=sinhaparth5&theme=2077" height="180em" />
 <img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=sinhaparth5&theme=2077" height="180em" />
 <img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=sinhaparth5&theme=2077" height="180em" />
-![ProfileSvg](profile-3d-contrib/profile-season-animate.svg)
+![ProfileSvg](https://raw.githubusercontent.com/sinhaparth5/sinhaparth5/refs/heads/main/profile-3d-contrib/profile-season-animate.svg)
 </div>
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"><h2 align="left">⚡Activity Graph:</h2>
 <img align="center" src="https://github-readme-activity-graph.vercel.app/graph?username=sinhaparth5&theme=default"/>
