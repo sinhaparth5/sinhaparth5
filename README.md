@@ -63,7 +63,7 @@ I'm currently studying **GPU architecture** and diving deep into **CUDA / parall
 <img src="https://github-readme-stats-git-master-rickstaa.vercel.app/api?username=sinhaparth5&show_icons=true&count_private=false&hide_border=false&bg_color=0D1117&title_color=79C0FF&text_color=C9D1D9&icon_color=7EE787&border_color=30363D&border_radius=12" height="180" alt="GitHub stats" />
 <img src="https://github-readme-stats-git-master-rickstaa.vercel.app/api/top-langs/?username=sinhaparth5&layout=compact&hide_border=false&bg_color=0D1117&title_color=79C0FF&text_color=C9D1D9&border_color=30363D&border_radius=12&langs_count=8" height="180" alt="Top languages" />
 
-<img src="https://streak-stats.demolab.com/?user=sinhaparth5&hide_border=true&background=0D1117&border=30363D&stroke=30363D&ring=79C0FF&fire=7EE787&currStreakLabel=79C0FF" alt="GitHub streak" />
+<img src="https://streak-stats.demolab.com/?user=sinhaparth5&hide_border=true&background=0D1117&border=30363D&stroke=30363D&ring=79C0FF&fire=7EE787&currStreakLabel=79C0FF&sideLabels=79C0FF&currStreakNum=C9D1D9&sideNums=C9D1D9&dates=8B949E" alt="GitHub streak" />
 
 </div>
 
