@@ -10,7 +10,7 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/parth-sinha18)
 [![Portfolio](https://img.shields.io/badge/Portfolio-79C0FF?style=for-the-badge&logo=googlechrome&logoColor=0D1117)](https://parthsinha.com)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:parth@devflowfix.com)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sinhaparth555@gmail.com)
 [![Twitter](https://img.shields.io/badge/@parth__sinha18-000000?style=for-the-badge&logo=x&logoColor=white)](https://twitter.com/parth_sinha18)
 
 </div>
@@ -30,6 +30,8 @@ I'm currently studying **GPU architecture** and diving deep into **CUDA / parall
 
 <div align="center">
 <img src="assets/fastfetch.svg" width="100%" alt="fastfetch-style summary card" />
+
+<sub>auto-refreshed daily at 00:00 UTC via <a href="./.github/workflows/update-fastfetch.yml">GitHub Actions</a></sub>
 </div>
 
 <br/>
@@ -75,7 +77,7 @@ I'm currently studying **GPU architecture** and diving deep into **CUDA / parall
 &nbsp;•&nbsp;
 [![Portfolio](https://img.shields.io/badge/parthsinha.com-79C0FF?style=flat-square&logo=googlechrome&logoColor=0D1117)](https://parthsinha.com)
 &nbsp;•&nbsp;
-[![Email](https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:parth@devflowfix.com)
+[![Email](https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:sinhaparth555@gmail.com)
 
 <img src="https://komarev.com/ghpvc/?username=sinhaparth5&label=Profile%20Views&color=79C0FF&style=flat-square" alt="profile views" />
 
