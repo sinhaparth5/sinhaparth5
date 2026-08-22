@@ -25,24 +25,45 @@ def stats():
 def ascii_portrait():
     image = Image.open(ROOT/"assets"/"portrait.png").convert("L")
     image = ImageEnhance.Contrast(ImageOps.autocontrast(image)).enhance(1.35)
-    image = ImageOps.fit(image, (38, 25))
-    chars = " .:-=+*#%@"
-    return ["".join(chars[image.getpixel((x,y))*(len(chars)-1)//255] for x in range(38)).rstrip() for y in range(25)]
+    image = ImageOps.fit(image, (26, 25))
+    chars = "@%#*+=-:. "
+    return ["".join(chars[image.getpixel((x,y))*(len(chars)-1)//255] for x in range(26)) for y in range(25)]
 
 def render(theme, data):
     dark = theme == "dark"
     bg,text = (("#161b22","#c9d1d9") if dark else ("#f6f8fa","#24292f"))
     key,value,dim = (("#ffa657","#a5d6ff","#616e7f") if dark else ("#953800","#0550ae","#6e7781"))
     green,red = (("#3fb950","#f85149") if dark else ("#1a7f37","#cf222e"))
-    portrait = "".join(f'<tspan x="15" y="{30+i*20}">{html.escape(line)}</tspan>' for i,line in enumerate(ascii_portrait()))
-    fields = [("OS","Linux"),("Location","United Kingdom"),("Role","GPU Architecture Student"),("Focus","CUDA, Parallel Computing"),("Editor","VS Code, Neovim"),None,("Languages.Programming","C++, C, Rust, Python, TypeScript"),("Languages.Web","JavaScript, React, Next.js, Node.js"),("Interests.Systems","GPU Kernels, Memory, Performance"),("Background","Web Architecture, Full-Stack Dev"),None,("Email","sinhaparth555@gmail.com"),("Website","parthsinha.com"),("LinkedIn","parth-sinha18"),("X","@parth_sinha18")]
-    chunks = ['<tspan x="390" y="30">parth@sinhaparth5</tspan> -——————————————————————————————-—-']; y=50
-    for item in fields:
-        if item is None: y += 20; continue
-        label,val=item; dots="."*max(2,35-len(label)-len(val)//2)
-        chunks.append(f'<tspan x="390" y="{y}" fill="{dim}">. </tspan><tspan x="410" y="{y}" fill="{key}">{html.escape(label)}:</tspan><tspan x="600" y="{y}" fill="{dim}">{dots}</tspan><tspan x="650" y="{y}" fill="{value}">{html.escape(val)}</tspan>'); y+=20
-    chunks += [f'<tspan x="390" y="450">- GitHub Stats -————————————————————————————-—-</tspan>',f'<tspan x="390" y="470" fill="{key}">Repos</tspan><tspan x="450" y="470" fill="{value}">{data["repos"]}</tspan><tspan x="500" y="470" fill="{key}">Stars</tspan><tspan x="560" y="470" fill="{value}">{data["stars"]}</tspan><tspan x="610" y="470" fill="{key}">Public Gists</tspan><tspan x="730" y="470" fill="{value}">{data["gists"]}</tspan>',f'<tspan x="390" y="490" fill="{key}">Followers</tspan><tspan x="490" y="490" fill="{value}">{data["followers"]}</tspan><tspan x="550" y="490" fill="{key}">Available for work</tspan><tspan x="730" y="490" fill="{green}">true</tspan>',f'<tspan x="390" y="510" fill="{key}">Current mode</tspan><tspan x="520" y="510" fill="{value}">learning</tspan><tspan x="610" y="510" fill="{green}">CUDA++</tspan><tspan x="700" y="510" fill="{red}">latency--</tspan>']
-    svg=f'''<svg xmlns="http://www.w3.org/2000/svg" font-family="Consolas,Ubuntu Mono,monospace" width="985" height="530" font-size="16"><style>text,tspan{{white-space:pre}}</style><rect width="985" height="530" fill="{bg}" rx="15"/><text fill="{text}">{portrait}</text><text x="390" y="30" fill="{text}">{''.join(chunks)}</text></svg>'''
+    portrait = "\n".join(f'<tspan x="15" y="{30+i*20}">{html.escape(line)}</tspan>' for i,line in enumerate(ascii_portrait()))
+    def row(y, label, val, width=57):
+        val = str(val)
+        return f'<tspan x="390" y="{y}" fill="{dim}">. </tspan><tspan x="410" y="{y}" fill="{key}">{html.escape(label)}:</tspan><tspan x="625" y="{y}" fill="{dim}">...</tspan><tspan x="650" y="{y}" fill="{value}">{html.escape(val)}</tspan>'
+    chunks = [
+        '<tspan x="390" y="30">parth@sinhaparth5</tspan> -——————————————————————————————-—-',
+        row(50,"OS","Linux"), row(70,"Location","United Kingdom"),
+        row(90,"Host","GPU Architecture Student"), row(110,"Kernel","CUDA / Parallel Computing"),
+        row(130,"IDE","VS Code, Neovim"), '<tspan x="390" y="150" fill="'+dim+'">. </tspan>',
+        row(170,"Languages.Programming","C++, C, Rust, Python"),
+        row(190,"Languages.Web","TypeScript, JavaScript, React"),
+        row(210,"Languages.Real","English"), '<tspan x="390" y="230" fill="'+dim+'">. </tspan>',
+        row(250,"Hobbies.Software","GPU kernels, systems programming"),
+        row(270,"Hobbies.Hardware","GPU architecture, performance"),
+        '<tspan x="390" y="310">- Contact</tspan> -——————————————————————————————————————————————-—-',
+        row(330,"Email.Personal","sinhaparth555@gmail.com"), row(350,"Website","parthsinha.com"),
+        row(370,"LinkedIn","parth-sinha18"), row(390,"X","@parth_sinha18"),
+        '<tspan x="390" y="430">- GitHub Stats</tspan> -—————————————————————————————————————————-—-',
+        row(450,"Repos",data["repos"]), row(470,"Stars",data["stars"]),
+        row(490,"Followers",data["followers"]),
+        f'<tspan x="390" y="510" fill="{dim}">. </tspan><tspan x="410" y="510" fill="{key}">Current mode:</tspan><tspan x="590" y="510" fill="{dim}">............</tspan><tspan x="650" y="510" fill="{green}">CUDA++</tspan><tspan x="730" y="510" fill="{red}">latency--</tspan>'
+    ]
+    svg=f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="985px" height="530px" font-size="16px" role="img" aria-labelledby="title desc">
+<title id="title">Parth Sinha GitHub profile</title><desc id="desc">Terminal-style profile with ASCII portrait, technical focus, contact links, and public GitHub statistics.</desc>
+<style>@font-face{{src:local('Consolas'),local('Consolas Bold');font-family:'ConsolasFallback';font-display:swap;-webkit-size-adjust:109%;size-adjust:109%}}text,tspan{{white-space:pre}}</style>
+<rect width="985px" height="530px" fill="{bg}" rx="15"/>
+<text x="15" y="30" fill="{text}">{portrait}</text>
+<text x="390" y="30" fill="{text}">{chr(10).join(chunks)}</text>
+</svg>'''
     (ROOT/f"{theme}_mode.svg").write_text(svg)
 
 if __name__ == "__main__":
