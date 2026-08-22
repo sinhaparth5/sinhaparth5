@@ -1,6 +1,8 @@
-name: Update fastfetch card
+name: README build
 
 on:
+  push:
+    branches: [main]
   schedule:
     - cron: "0 0 * * *" # 00:00 UTC daily
   workflow_dispatch: {}
@@ -20,19 +22,22 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Regenerate fastfetch card
+      - name: Install image dependency
+        run: python -m pip install Pillow
+
+      - name: Regenerate profile cards
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/render_fastfetch.py
 
       - name: Commit if changed
         run: |
-          if git diff --quiet -- assets/fastfetch.svg; then
+          if git diff --quiet -- dark_mode.svg light_mode.svg; then
             echo "No changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/fastfetch.svg
-          git commit -m "chore: refresh fastfetch stats card [skip ci]"
+          git add dark_mode.svg light_mode.svg
+          git commit -m "Updated README"
           git push

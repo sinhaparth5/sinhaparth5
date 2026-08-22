@@ -1,216 +1,51 @@
 #!/usr/bin/env python3
-"""Regenerates assets/fastfetch.svg with live public GitHub stats.
+"""Build Andrew6rant-style light/dark profile cards for sinhaparth5."""
+import html, json, os, urllib.request
+from pathlib import Path
+from PIL import Image, ImageEnhance, ImageOps
 
-The avatar ASCII art (scripts/ascii_block.svg) and the embedded Ubuntu Mono
-font (scripts/fontface.css) are static and checked in -- only the stats in
-the info panel are refreshed here. Run manually with:
-
-    GH_TOKEN=<token> python3 scripts/render_fastfetch.py
-
-The daily GitHub Actions workflow (.github/workflows/update-fastfetch.yml)
-runs this with the built-in GITHUB_TOKEN.
-"""
-import datetime
-import json
-import os
-import sys
-import urllib.request
-
-REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = Path(__file__).resolve().parents[1]
 USERNAME = os.environ.get("GITHUB_REPOSITORY_OWNER", "sinhaparth5")
 TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
 
-API_ROOT = "https://api.github.com"
+def api(path):
+    req = urllib.request.Request(f"https://api.github.com{path}", headers={"Accept":"application/vnd.github+json","User-Agent":"profile-readme-card"})
+    if TOKEN: req.add_header("Authorization", f"Bearer {TOKEN}")
+    with urllib.request.urlopen(req, timeout=30) as response: return json.loads(response.read())
 
-
-def api_get(url):
-    req = urllib.request.Request(url)
-    req.add_header("Accept", "application/vnd.github+json")
-    req.add_header("User-Agent", "fastfetch-card-script")
-    if TOKEN:
-        req.add_header("Authorization", f"Bearer {TOKEN}")
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.loads(resp.read().decode())
-
-
-def graphql(query):
-    body = json.dumps({"query": query}).encode()
-    req = urllib.request.Request(f"{API_ROOT}/graphql", data=body, method="POST")
-    req.add_header("Content-Type", "application/json")
-    req.add_header("User-Agent", "fastfetch-card-script")
-    req.add_header("Authorization", f"Bearer {TOKEN}")
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        payload = json.loads(resp.read().decode())
-    if "errors" in payload:
-        raise RuntimeError(f"GraphQL error: {payload['errors']}")
-    return payload["data"]
-
-
-def fetch_repos(username):
-    repos = []
-    page = 1
+def stats():
+    user, repos, page = api(f"/users/{USERNAME}"), [], 1
     while True:
-        chunk = api_get(f"{API_ROOT}/users/{username}/repos?per_page=100&page={page}&type=owner")
-        if not chunk:
-            break
-        repos.extend(chunk)
-        if len(chunk) < 100:
-            break
+        chunk = api(f"/users/{USERNAME}/repos?type=owner&per_page=100&page={page}"); repos += chunk
+        if len(chunk) < 100: break
         page += 1
-    return [r for r in repos if not r.get("fork")]
+    owned = [r for r in repos if not r["fork"]]
+    return {"repos":len(owned), "stars":sum(r["stargazers_count"] for r in owned), "followers":user["followers"], "gists":user["public_gists"]}
 
+def ascii_portrait():
+    image = Image.open(ROOT/"assets"/"portrait.png").convert("L")
+    image = ImageEnhance.Contrast(ImageOps.autocontrast(image)).enhance(1.35)
+    image = ImageOps.fit(image, (38, 25))
+    chars = " .:-=+*#%@"
+    return ["".join(chars[image.getpixel((x,y))*(len(chars)-1)//255] for x in range(38)).rstrip() for y in range(25)]
 
-def fetch_language_totals(repos):
-    totals = {}
-    for repo in repos:
-        try:
-            langs = api_get(repo["languages_url"])
-        except Exception:
-            continue
-        for lang, size in langs.items():
-            totals[lang] = totals.get(lang, 0) + size
-    return totals
-
-
-def main():
-    if not TOKEN:
-        print("ERROR: no GH_TOKEN / GITHUB_TOKEN in environment", file=sys.stderr)
-        sys.exit(1)
-
-    user = api_get(f"{API_ROOT}/users/{USERNAME}")
-    followers = user["followers"]
-
-    repos = fetch_repos(USERNAME)
-    repos_count = len(repos)
-    stars = sum(r.get("stargazers_count", 0) for r in repos)
-
-    lang_totals = fetch_language_totals(repos)
-    total_bytes = sum(lang_totals.values()) or 1
-    ranked_langs = sorted(lang_totals.items(), key=lambda kv: kv[1], reverse=True)
-    top_lang_name, top_lang_bytes = ranked_langs[0] if ranked_langs else ("Unknown", 0)
-    top_lang_pct = 100 * top_lang_bytes / total_bytes
-    top5_names = [name for name, _ in ranked_langs[:5]]
-
-    prs = api_get(f"{API_ROOT}/search/issues?q=author:{USERNAME}+type:pr")["total_count"]
-
-    gql = graphql(
-        f'query {{ user(login: "{USERNAME}") {{ contributionsCollection {{ '
-        f"totalCommitContributions totalRepositoriesWithContributedCommits }} }} }}"
-    )
-    contrib = gql["user"]["contributionsCollection"]
-    commits = contrib["totalCommitContributions"]
-    contributed_to = contrib["totalRepositoriesWithContributedCommits"]
-    year = datetime.datetime.now(datetime.timezone.utc).year
-
-    fields = [
-        ("Role", "GPU Architecture Student"),
-        ("Focus", "CUDA & Parallel Computing"),
-        ("Background", "Web Architecture, Full-Stack Dev"),
-        ("Languages", ", ".join(top5_names) if top5_names else "n/a"),
-        ("Top Language", f"{top_lang_name} — {top_lang_pct:.1f}% of public code"),
-        ("Repos", f"{repos_count} public"),
-        ("Stars", f"{stars} earned"),
-        ("Commits", f"{commits} in {year}"),
-        ("Pull Requests", f"{prs} opened"),
-        ("Contributed To", f"{contributed_to} repositories"),
-        ("Followers", f"{followers}"),
-    ]
-
-    render(fields)
-    print("Updated assets/fastfetch.svg with live stats:")
-    for label, value in fields:
-        print(f"  {label}: {value}")
-
-
-def esc(text):
-    return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-
-
-def render(fields):
-    with open(os.path.join(REPO_ROOT, "scripts", "fontface.css")) as f:
-        fontface_css = f.read()
-    with open(os.path.join(REPO_ROOT, "scripts", "ascii_block.svg")) as f:
-        ascii_block = f.read()
-
-    LABEL_COLOR = "#7ee787"
-    VALUE_COLOR = "#c9d1d9"
-    DIM_COLOR = "#30363d"
-    HOST_COLOR = "#79c0ff"
-
-    INFO_X = 320
-    INFO_FONT = 13.5
-    INFO_LINE_H = 21.5
-    INFO_START_Y = 92
-    LABEL_WIDTH_CH = 15
-    INFO_CHAR_W = INFO_FONT * 0.6
-    HEADER_FONT = 16
-
-    info_lines = []
-    y = INFO_START_Y
-    info_lines.append(
-        f'<text x="{INFO_X}" y="{y:.2f}" font-family="Ubuntu Mono, monospace" '
-        f'font-size="{HEADER_FONT}" font-weight="700" fill="{HOST_COLOR}">parth@sinhaparth5</text>'
-    )
-    y += INFO_LINE_H + 2
-    info_lines.append(
-        f'<text x="{INFO_X}" y="{y:.2f}" font-family="Ubuntu Mono, monospace" '
-        f'font-size="{INFO_FONT}" fill="{DIM_COLOR}">' + ("─" * 30) + "</text>"
-    )
-    y += INFO_LINE_H + 4
-
-    for label, value in fields:
-        label_txt = esc((label + ":").ljust(LABEL_WIDTH_CH))
-        value_esc = esc(value)
-        value_x = INFO_X + LABEL_WIDTH_CH * INFO_CHAR_W
-        info_lines.append(
-            f'<text x="{INFO_X}" y="{y:.2f}" font-family="Ubuntu Mono, monospace" '
-            f'font-size="{INFO_FONT}" xml:space="preserve">'
-            f'<tspan fill="{LABEL_COLOR}">{label_txt}</tspan>'
-            f'<tspan x="{value_x:.2f}" fill="{VALUE_COLOR}">{value_esc}</tspan></text>'
-        )
-        y += INFO_LINE_H
-
-    y += 10
-    swatch_colors = ["#ff5f56", "#ffbd2e", "#27c93f", "#79c0ff", "#a371f7", "#f778ba", "#76b900", "#c9d1d9"]
-    swatches = []
-    sx = INFO_X
-    for c in swatch_colors:
-        swatches.append(f'<rect x="{sx}" y="{y - 11:.2f}" width="16" height="12" rx="2" fill="{c}"/>')
-        sx += 22
-
-    info_block = "\n      ".join(info_lines)
-    swatch_block = "\n      ".join(swatches)
-
-    canvas_w = 780
-    canvas_h = int(y + 30)
-
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{canvas_w}" height="{canvas_h}" viewBox="0 0 {canvas_w} {canvas_h}">
-  <defs>
-    <style>
-{fontface_css}
-    </style>
-    <clipPath id="cardClip">
-      <rect x="0.5" y="0.5" width="{canvas_w - 1}" height="{canvas_h - 1}" rx="12"/>
-    </clipPath>
-  </defs>
-  <g clip-path="url(#cardClip)">
-    <rect x="0.5" y="0.5" width="{canvas_w - 1}" height="{canvas_h - 1}" rx="12" fill="#0d1117" stroke="#30363d"/>
-    <rect x="0" y="0" width="{canvas_w}" height="34" fill="#161b22"/>
-    <circle cx="20" cy="17" r="6" fill="#ff5f56"/>
-    <circle cx="40" cy="17" r="6" fill="#ffbd2e"/>
-    <circle cx="60" cy="17" r="6" fill="#27c93f"/>
-    <text x="{canvas_w / 2}" y="21.5" text-anchor="middle" font-family="Ubuntu Mono, monospace" font-size="12.5" fill="#8b949e">parth@sinhaparth5: ~</text>
-    <line x1="0" y1="34" x2="{canvas_w}" y2="34" stroke="#30363d"/>
-    {ascii_block}
-    {info_block}
-    {swatch_block}
-  </g>
-</svg>
-'''
-
-    with open(os.path.join(REPO_ROOT, "assets", "fastfetch.svg"), "w") as f:
-        f.write(svg)
-
+def render(theme, data):
+    dark = theme == "dark"
+    bg,text = (("#161b22","#c9d1d9") if dark else ("#f6f8fa","#24292f"))
+    key,value,dim = (("#ffa657","#a5d6ff","#616e7f") if dark else ("#953800","#0550ae","#6e7781"))
+    green,red = (("#3fb950","#f85149") if dark else ("#1a7f37","#cf222e"))
+    portrait = "".join(f'<tspan x="15" y="{30+i*20}">{html.escape(line)}</tspan>' for i,line in enumerate(ascii_portrait()))
+    fields = [("OS","Linux"),("Location","United Kingdom"),("Role","GPU Architecture Student"),("Focus","CUDA, Parallel Computing"),("Editor","VS Code, Neovim"),None,("Languages.Programming","C++, C, Rust, Python, TypeScript"),("Languages.Web","JavaScript, React, Next.js, Node.js"),("Interests.Systems","GPU Kernels, Memory, Performance"),("Background","Web Architecture, Full-Stack Dev"),None,("Email","sinhaparth555@gmail.com"),("Website","parthsinha.com"),("LinkedIn","parth-sinha18"),("X","@parth_sinha18")]
+    chunks = ['<tspan x="390" y="30">parth@sinhaparth5</tspan> -——————————————————————————————-—-']; y=50
+    for item in fields:
+        if item is None: y += 20; continue
+        label,val=item; dots="."*max(2,35-len(label)-len(val)//2)
+        chunks.append(f'<tspan x="390" y="{y}" fill="{dim}">. </tspan><tspan x="410" y="{y}" fill="{key}">{html.escape(label)}:</tspan><tspan x="600" y="{y}" fill="{dim}">{dots}</tspan><tspan x="650" y="{y}" fill="{value}">{html.escape(val)}</tspan>'); y+=20
+    chunks += [f'<tspan x="390" y="450">- GitHub Stats -————————————————————————————-—-</tspan>',f'<tspan x="390" y="470" fill="{key}">Repos</tspan><tspan x="450" y="470" fill="{value}">{data["repos"]}</tspan><tspan x="500" y="470" fill="{key}">Stars</tspan><tspan x="560" y="470" fill="{value}">{data["stars"]}</tspan><tspan x="610" y="470" fill="{key}">Public Gists</tspan><tspan x="730" y="470" fill="{value}">{data["gists"]}</tspan>',f'<tspan x="390" y="490" fill="{key}">Followers</tspan><tspan x="490" y="490" fill="{value}">{data["followers"]}</tspan><tspan x="550" y="490" fill="{key}">Available for work</tspan><tspan x="730" y="490" fill="{green}">true</tspan>',f'<tspan x="390" y="510" fill="{key}">Current mode</tspan><tspan x="520" y="510" fill="{value}">learning</tspan><tspan x="610" y="510" fill="{green}">CUDA++</tspan><tspan x="700" y="510" fill="{red}">latency--</tspan>']
+    svg=f'''<svg xmlns="http://www.w3.org/2000/svg" font-family="Consolas,Ubuntu Mono,monospace" width="985" height="530" font-size="16"><style>text,tspan{{white-space:pre}}</style><rect width="985" height="530" fill="{bg}" rx="15"/><text fill="{text}">{portrait}</text><text x="390" y="30" fill="{text}">{''.join(chunks)}</text></svg>'''
+    (ROOT/f"{theme}_mode.svg").write_text(svg)
 
 if __name__ == "__main__":
-    main()
+    try: data=stats()
+    except Exception as exc: print(f"GitHub API unavailable ({exc}); using snapshot"); data={"repos":38,"stars":0,"followers":47,"gists":3}
+    render("dark",data); render("light",data); print("Updated dark_mode.svg and light_mode.svg")
