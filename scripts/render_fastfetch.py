@@ -2,7 +2,7 @@
 """Build Andrew6rant-style light/dark profile cards for sinhaparth5."""
 import html, json, os, urllib.request
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageOps
+from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 USERNAME = os.environ.get("GITHUB_REPOSITORY_OWNER", "sinhaparth5")
@@ -12,6 +12,7 @@ MARKUP = {"HTML", "CSS", "SCSS", "TeX", "Jupyter Notebook", "Dockerfile", "Makef
 # the photo at the box's real pixel aspect, not a square grid, or it renders squeezed.
 P_FONT, P_LINE, P_WIDTH = 10, 12, 355
 P_COLS, P_ROWS = int(P_WIDTH / (P_FONT * 0.6)), 41
+AVATAR = ROOT/"assets"/"avatar.jpg"
 WIDTH = 1025  # room for "C++ 35% Python 19% TypeScript 17% Go 10%" at the value column
 
 def api(path):
@@ -35,17 +36,22 @@ def stats():
     return {"repos":len(owned), "stars":sum(r["stargazers_count"] for r in owned), "followers":user["followers"], "gists":user["public_gists"], "languages":top}
 
 def ascii_portrait(dark):
-    image = Image.open(ROOT/"assets"/"portrait.png").convert("L")
-    image = ImageOps.fit(image, (P_COLS*P_FONT*6//10, P_ROWS*P_LINE), centering=(0.5, 0.3)).resize((P_COLS, P_ROWS), Image.LANCZOS)
-    image = ImageEnhance.Contrast(ImageOps.equalize(image)).enhance(1.2)  # grey backdrop needs the spread
-    if dark: image = image.point(lambda v: int(255*(v/255)**1.8))  # sink the grey backdrop, keep the lit face
-    # fade the busy grey backdrop to blank toward the edges, keep the face/headphones
-    mask = Image.new("L", image.size, 0)
-    ImageDraw.Draw(mask).ellipse((P_COLS*0.08, P_ROWS*0.02, P_COLS*0.92, P_ROWS*1.25), fill=255)
-    mask = mask.filter(ImageFilter.GaussianBlur(4))
-    image = Image.composite(image, Image.new("L", image.size, 0 if dark else 255), mask)
-    chars = "@%#*+=-:. "[::-1] if dark else "@%#*+=-:. "  # dense glyph = bright on dark bg
-    return ["".join(chars[image.getpixel((x,y))*(len(chars)-1)//255] for x in range(P_COLS)) for y in range(P_ROWS)]
+    try:  # live GitHub avatar, cached so offline runs still render
+        req = urllib.request.Request(api(f"/users/{USERNAME}")["avatar_url"] + "&s=460", headers={"User-Agent":"profile-readme-card"})
+        AVATAR.write_bytes(urllib.request.urlopen(req, timeout=30).read())
+    except Exception as exc: print(f"Avatar fetch failed ({exc}); using cached {AVATAR.name}")
+    # Pad (not crop) the square avatar into the tall panel; cells are ~2x taller than wide.
+    src = Image.open(AVATAR).convert("RGB")
+    bg = src.getpixel((2, 2))
+    rgb = ImageOps.pad(src, (P_COLS, P_ROWS*2), color=bg).resize((P_COLS, P_ROWS), Image.BOX)
+    grey = rgb.convert("L")
+    # the flat backdrop (corner colour) stays blank; contrast is stretched over the subject only
+    subject = {(x, y) for y in range(P_ROWS) for x in range(P_COLS) if sum((c-b)**2 for c,b in zip(rgb.getpixel((x, y)), bg)) >= 70**2}
+    vals = sorted(grey.getpixel(xy) for xy in subject) or [0, 255]
+    lo, hi = vals[len(vals)//50], vals[-len(vals)//50 - 1]
+    ramp = ".:-=+*#%@" if dark else "@%#*+=-:."  # dark theme: bright = dense; light theme: dark = dense
+    def glyph(v): return ramp[max(0, min(len(ramp)-1, (v-lo)*len(ramp)//max(1, hi-lo+1)))]
+    return ["".join(glyph(grey.getpixel((x, y))) if (x, y) in subject else " " for x in range(P_COLS)) for y in range(P_ROWS)]
 
 def render(theme, data):
     dark = theme == "dark"

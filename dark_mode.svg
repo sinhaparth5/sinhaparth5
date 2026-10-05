@@ -3,47 +3,47 @@
 <title id="title">Parth Sinha GitHub profile</title><desc id="desc">Terminal-style profile with ASCII portrait, technical focus, contact links, and public GitHub statistics.</desc>
 <style>@font-face{src:local('Consolas'),local('Consolas Bold');font-family:'ConsolasFallback';font-display:swap;-webkit-size-adjust:109%;size-adjust:109%}text,tspan{white-space:pre}</style>
 <rect width="1025px" height="530px" fill="#161b22" rx="15"/>
-<g fill="#c9d1d9" font-size="10px"><text x="15" y="30" textLength="355" lengthAdjust="spacingAndGlyphs">            ...::--==++**###%%%#*+**++=--:::...            </text>
-<text x="15" y="42" textLength="355" lengthAdjust="spacingAndGlyphs">           ...::---=++**##*++==--:.:----:--:...            </text>
-<text x="15" y="54" textLength="355" lengthAdjust="spacingAndGlyphs">           ..::--=::---:.             .:...:::..           </text>
-<text x="15" y="66" textLength="355" lengthAdjust="spacingAndGlyphs">         ...::--:::       ..   .:..        ......          </text>
-<text x="15" y="78" textLength="355" lengthAdjust="spacingAndGlyphs">          .:::..         .:::.      .         ...          </text>
-<text x="15" y="90" textLength="355" lengthAdjust="spacingAndGlyphs">       .                      ..     .                     </text>
-<text x="15" y="102" textLength="355" lengthAdjust="spacingAndGlyphs">       ...     .::::.    ...                               </text>
-<text x="15" y="114" textLength="355" lengthAdjust="spacingAndGlyphs">      ..:..             .........                          </text>
-<text x="15" y="126" textLength="355" lengthAdjust="spacingAndGlyphs">     ...             .:..  ..::.                           </text>
-<text x="15" y="138" textLength="355" lengthAdjust="spacingAndGlyphs">               ..  ..::.                        .          </text>
-<text x="15" y="150" textLength="355" lengthAdjust="spacingAndGlyphs">             :-.      ..     .-:.:.          :.:.          </text>
-<text x="15" y="162" textLength="355" lengthAdjust="spacingAndGlyphs">   ....    ...       .  .  .::      .===:  . .::           </text>
-<text x="15" y="174" textLength="355" lengthAdjust="spacingAndGlyphs">  ..  ..                          :+%%%%+-  .  .           </text>
-<text x="15" y="186" textLength="355" lengthAdjust="spacingAndGlyphs">  .   --  ..                   :-+@@@%%%%+-.               </text>
-<text x="15" y="198" textLength="355" lengthAdjust="spacingAndGlyphs">  .  :=-.             :=-   :==*@@@@@@@%%%*=          ..   </text>
-<text x="15" y="210" textLength="355" lengthAdjust="spacingAndGlyphs">  .  ---.     .----=+#@*--=*@@@@@@@@@@@@%%%+=          .   </text>
-<text x="15" y="222" textLength="355" lengthAdjust="spacingAndGlyphs"> ...          =*-..-====*@@@@@@@@@*+===-:-=++:             </text>
-<text x="15" y="234" textLength="355" lengthAdjust="spacingAndGlyphs">..     .     -+=.-=--.   -#@@@@@+:   .-===-:=+             </text>
-<text x="15" y="246" textLength="355" lengthAdjust="spacingAndGlyphs">.  ... .:    =#=++++++=---=%@@@@+==-=+#**##+=+.   .:  ...  </text>
-<text x="15" y="258" textLength="355" lengthAdjust="spacingAndGlyphs">  .:-::.-:   =+=- ==  .====+@@@#++==.  ==.-+*+:   -:.:-:.  </text>
-<text x="15" y="270" textLength="355" lengthAdjust="spacingAndGlyphs">. .:::. ::   =*++=*@==+@%#++@@@%%@%@+==@%+*@#+:  .-. :::.  </text>
-<text x="15" y="282" textLength="355" lengthAdjust="spacingAndGlyphs">.  ..:  .:   =%#@@@@@@@@@***@@@@@@@@@@@@@@@@%+.  .:  ...   </text>
-<text x="15" y="294" textLength="355" lengthAdjust="spacingAndGlyphs">.   ..   .   -%@@@@@@@@@%*+#@@@@@@@@@@@@@@@@#+   ..  .     </text>
-<text x="15" y="306" textLength="355" lengthAdjust="spacingAndGlyphs">:.           :@@@@@@@@@@%+@@@@@@%@@@@@@@@@@@*=             </text>
-<text x="15" y="318" textLength="355" lengthAdjust="spacingAndGlyphs">.:.           @@%@@@@@@@++++@@#+#*@@@@@@@@@#+-            .</text>
-<text x="15" y="330" textLength="355" lengthAdjust="spacingAndGlyphs">..:-::.       +@@%@@@@@@#=--====+@@@@@@@@@%*+         ..:..</text>
-<text x="15" y="342" textLength="355" lengthAdjust="spacingAndGlyphs">..::=++--.     @@##@#*+*%%###*@@@@@%+%@@@%#*-         .:::.</text>
-<text x="15" y="354" textLength="355" lengthAdjust="spacingAndGlyphs">..--::         :@@*#%*+==+++***++++++#@@##*-              .</text>
-<text x="15" y="366" textLength="355" lengthAdjust="spacingAndGlyphs">.:-.             +@**@@@#**%%#@@##@@@@@#*+:                </text>
-<text x="15" y="378" textLength="355" lengthAdjust="spacingAndGlyphs">.::.              =+**#%@%#++++*%@@@@%*=-:                 </text>
-<text x="15" y="390" textLength="355" lengthAdjust="spacingAndGlyphs">.::...            +--=+#@@@@@@@@@@@@*=--=-                 </text>
-<text x="15" y="402" textLength="355" lengthAdjust="spacingAndGlyphs">. ...:::          ==-::=+*@@@@@@@@*=::-=+-            ..   </text>
-<text x="15" y="414" textLength="355" lengthAdjust="spacingAndGlyphs">     ..:-:        -===-::---====--:--=**+-         .:..    </text>
-<text x="15" y="426" textLength="355" lengthAdjust="spacingAndGlyphs">       ..:--.    .:=====--:... .:-==+##+=-:     .:::..     </text>
-<text x="15" y="438" textLength="355" lengthAdjust="spacingAndGlyphs">     ......:---.  :-==+====---==++++#%*+=-   .:--::...     </text>
-<text x="15" y="450" textLength="355" lengthAdjust="spacingAndGlyphs">       ..::..:---:.:-=+++===-===++*%%*+-. .----::...       </text>
-<text x="15" y="462" textLength="355" lengthAdjust="spacingAndGlyphs">          ..::.:---::-==++=====++*%*+-:.:---:.....         </text>
-<text x="15" y="474" textLength="355" lengthAdjust="spacingAndGlyphs">             .... :::::-=+++=+++**=-:::::.....             </text>
-<text x="15" y="486" textLength="355" lengthAdjust="spacingAndGlyphs">       .          +: .::::=+*++==::::: ==         ..       </text>
-<text x="15" y="498" textLength="355" lengthAdjust="spacingAndGlyphs">        ...       +-    ...:-:::.:.    +=      ..:.        </text>
-<text x="15" y="510" textLength="355" lengthAdjust="spacingAndGlyphs">         .::....  =-       .  ..       +- .....::.         </text></g>
+<g fill="#c9d1d9" font-size="10px"><text x="15" y="30" textLength="355" lengthAdjust="spacingAndGlyphs">                                                           </text>
+<text x="15" y="42" textLength="355" lengthAdjust="spacingAndGlyphs">                                                           </text>
+<text x="15" y="54" textLength="355" lengthAdjust="spacingAndGlyphs">                                                           </text>
+<text x="15" y="66" textLength="355" lengthAdjust="spacingAndGlyphs">                                                           </text>
+<text x="15" y="78" textLength="355" lengthAdjust="spacingAndGlyphs">                                                           </text>
+<text x="15" y="90" textLength="355" lengthAdjust="spacingAndGlyphs">                                                           </text>
+<text x="15" y="102" textLength="355" lengthAdjust="spacingAndGlyphs">                                                           </text>
+<text x="15" y="114" textLength="355" lengthAdjust="spacingAndGlyphs">                                                           </text>
+<text x="15" y="126" textLength="355" lengthAdjust="spacingAndGlyphs">                                                           </text>
+<text x="15" y="138" textLength="355" lengthAdjust="spacingAndGlyphs">                                   **#*                    </text>
+<text x="15" y="150" textLength="355" lengthAdjust="spacingAndGlyphs">                                  *%%%#*                   </text>
+<text x="15" y="162" textLength="355" lengthAdjust="spacingAndGlyphs">               *##%%%*######**   *#%%%*    **              </text>
+<text x="15" y="174" textLength="355" lengthAdjust="spacingAndGlyphs">             *##*%%%%##%%%####%%#**##*   *#%%#*            </text>
+<text x="15" y="186" textLength="355" lengthAdjust="spacingAndGlyphs">             #%#*%++%*%%%#:.@@*%%##%##***%%%%#*            </text>
+<text x="15" y="198" textLength="355" lengthAdjust="spacingAndGlyphs">             *%%%%%%*#%%%%#%@##%*+@@#%%###%#*              </text>
+<text x="15" y="210" textLength="355" lengthAdjust="spacingAndGlyphs">              **####%%%%%%%%%%%#+.@@#%%%%#**               </text>
+<text x="15" y="222" textLength="355" lengthAdjust="spacingAndGlyphs">               **#%%%%%%%%%%%%%%##%#%%%%%%%#*              </text>
+<text x="15" y="234" textLength="355" lengthAdjust="spacingAndGlyphs">                  *##%%%%%%%%%%%%%%%%%%%%%%%#*             </text>
+<text x="15" y="246" textLength="355" lengthAdjust="spacingAndGlyphs">                     *#%%%%%%%%%%%%%%%#####%%#             </text>
+<text x="15" y="258" textLength="355" lengthAdjust="spacingAndGlyphs">                    *%%%%%%%%%%%%%%%#******#%#*            </text>
+<text x="15" y="270" textLength="355" lengthAdjust="spacingAndGlyphs">           -        #%%=#%%%%%%%%%%%#******#%%*            </text>
+<text x="15" y="282" textLength="355" lengthAdjust="spacingAndGlyphs">         -+@@      *#%%+-%%%%%%%%*#%%#****#%%#*            </text>
+<text x="15" y="294" textLength="355" lengthAdjust="spacingAndGlyphs">       :#@@@@       *%%%#==+***=-+%%%%%%%%%%%*             </text>
+<text x="15" y="306" textLength="355" lengthAdjust="spacingAndGlyphs">       -==++****+   *#%%%%%#***#%%%%%%%%%%%%*              </text>
+<text x="15" y="318" textLength="355" lengthAdjust="spacingAndGlyphs">      -+*%@@@@@@+     *#%%%%%%%%%%%%%%%%%%#*               </text>
+<text x="15" y="330" textLength="355" lengthAdjust="spacingAndGlyphs">       **%@@@@@@+-%  -.-+*#%%%%%%%%%%%%%#+-=               </text>
+<text x="15" y="342" textLength="355" lengthAdjust="spacingAndGlyphs">       +*#@@%@%@+- #:.::::-==+***##**+=--::.=              </text>
+<text x="15" y="354" textLength="355" lengthAdjust="spacingAndGlyphs">       -*#@@@%%@%#%=::::::::::::::::::::::::.=             </text>
+<text x="15" y="366" textLength="355" lengthAdjust="spacingAndGlyphs">       --=%%@@@@+ ==**+::::::::::::::::::::::.             </text>
+<text x="15" y="378" textLength="355" lengthAdjust="spacingAndGlyphs">             ===-=..:::::::::::::::::::::::::.:            </text>
+<text x="15" y="390" textLength="355" lengthAdjust="spacingAndGlyphs">                 :.:::::::::::::::::::::::::::.+           </text>
+<text x="15" y="402" textLength="355" lengthAdjust="spacingAndGlyphs">                 ..:::::::::::::::::::::::::::.: %%%       </text>
+<text x="15" y="414" textLength="355" lengthAdjust="spacingAndGlyphs">                =.::::::::::::::::::::::::::::..#%%%%%     </text>
+<text x="15" y="426" textLength="355" lengthAdjust="spacingAndGlyphs">                :.:::::::::::::::::::::::::::::.=          </text>
+<text x="15" y="438" textLength="355" lengthAdjust="spacingAndGlyphs">                ..:::::::::::::::::::::::::::::.:          </text>
+<text x="15" y="450" textLength="355" lengthAdjust="spacingAndGlyphs">                -==============================-=          </text>
+<text x="15" y="462" textLength="355" lengthAdjust="spacingAndGlyphs">                                                           </text>
+<text x="15" y="474" textLength="355" lengthAdjust="spacingAndGlyphs">                                                           </text>
+<text x="15" y="486" textLength="355" lengthAdjust="spacingAndGlyphs">                                                           </text>
+<text x="15" y="498" textLength="355" lengthAdjust="spacingAndGlyphs">                                                           </text>
+<text x="15" y="510" textLength="355" lengthAdjust="spacingAndGlyphs">                                                           </text></g>
 <text x="390" y="30" fill="#c9d1d9"><tspan x="390" y="30">parth@sinhaparth5</tspan> -——————————————————————————————————-—-
 <tspan x="390" y="50" fill="#616e7f">. </tspan><tspan x="410" y="50" fill="#ffa657">OS:</tspan><tspan x="585" y="50" fill="#616e7f">...</tspan><tspan x="615" y="50" fill="#a5d6ff">Linux</tspan>
 <tspan x="390" y="70" fill="#616e7f">. </tspan><tspan x="410" y="70" fill="#ffa657">Location:</tspan><tspan x="585" y="70" fill="#616e7f">...</tspan><tspan x="615" y="70" fill="#a5d6ff">United Kingdom</tspan>
