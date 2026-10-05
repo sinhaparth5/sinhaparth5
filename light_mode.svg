@@ -1,54 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="985px" height="530px" font-size="16px" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="1025px" height="530px" font-size="16px" role="img" aria-labelledby="title desc">
 <title id="title">Parth Sinha GitHub profile</title><desc id="desc">Terminal-style profile with ASCII portrait, technical focus, contact links, and public GitHub statistics.</desc>
 <style>@font-face{src:local('Consolas'),local('Consolas Bold');font-family:'ConsolasFallback';font-display:swap;-webkit-size-adjust:109%;size-adjust:109%}text,tspan{white-space:pre}</style>
-<rect width="985px" height="530px" fill="#f6f8fa" rx="15"/>
-<text x="15" y="30" fill="#24292f"><tspan x="15" y="30">++++=======+*#%*+=++++++++</tspan>
-<tspan x="15" y="50">++++++===#%@@@@@@#++++++++</tspan>
-<tspan x="15" y="70">+++++=**%@@@@@@@@@%*++++++</tspan>
-<tspan x="15" y="90">+++++=*@@@@@@@@@@@@%++++++</tspan>
-<tspan x="15" y="110">+++++=*@@@@@@@@@@@@@#+++++</tspan>
-<tspan x="15" y="130">++++=#@@@@@@@@@@@@@@@*++++</tspan>
-<tspan x="15" y="150">++++=%@@@@@@@@@@@@%@@%++++</tspan>
-<tspan x="15" y="170">+++++%@@@@@@@@%=*@@@@@++++</tspan>
-<tspan x="15" y="190">++++**%@@@@@@#--=%@@@%++++</tspan>
-<tspan x="15" y="210">++++*#@@%%**=-:=+*@@@%++++</tspan>
-<tspan x="15" y="230">++++#@@@##%#--%%##@@@@*+++</tspan>
-<tspan x="15" y="250">++++##@@*#%%==#%**%@%#%+++</tspan>
-<tspan x="15" y="270">++++##@@***+=-=*++%@%##+++</tspan>
-<tspan x="15" y="290">++++@@@@=--==----=@@@@#+++</tspan>
-<tspan x="15" y="310">++++%@@@=--+-==::=@@@@*+++</tspan>
-<tspan x="15" y="330">++++*%@@==-+**=--+@@@#++++</tspan>
-<tspan x="15" y="350">+++++*@@*=+++=++=#@@@#++++</tspan>
-<tspan x="15" y="370">*++++@@@@+=++++=+@@@@@*+++</tspan>
-<tspan x="15" y="390">*+*=+@@@@%*===-+%@@@@@#+++</tspan>
-<tspan x="15" y="410">*++=#%@@@%%*==*%#@@@@@%+**</tspan>
-<tspan x="15" y="430">**+#@@%@@%#%@@%**@@@%@@#+*</tspan>
-<tspan x="15" y="450">+=*@@@@%@@##%#*+#@%%@@@@++</tspan>
-<tspan x="15" y="470">#%@@@@@@@@%*#*+#@%@@@@@@@#</tspan>
-<tspan x="15" y="490">@@@@@@@@@%@%**#@%@@@@@@@@@</tspan>
-<tspan x="15" y="510">@@@@@@@@@%@@%%@@%@@@@@@@@@</tspan></text>
-<text x="390" y="30" fill="#24292f"><tspan x="390" y="30">parth@sinhaparth5</tspan> -——————————————————————————————-—-
-<tspan x="390" y="50" fill="#6e7781">. </tspan><tspan x="410" y="50" fill="#953800">OS:</tspan><tspan x="625" y="50" fill="#6e7781">...</tspan><tspan x="650" y="50" fill="#0550ae">Linux</tspan>
-<tspan x="390" y="70" fill="#6e7781">. </tspan><tspan x="410" y="70" fill="#953800">Location:</tspan><tspan x="625" y="70" fill="#6e7781">...</tspan><tspan x="650" y="70" fill="#0550ae">United Kingdom</tspan>
-<tspan x="390" y="90" fill="#6e7781">. </tspan><tspan x="410" y="90" fill="#953800">Host:</tspan><tspan x="625" y="90" fill="#6e7781">...</tspan><tspan x="650" y="90" fill="#0550ae">GPU Architecture Student</tspan>
-<tspan x="390" y="110" fill="#6e7781">. </tspan><tspan x="410" y="110" fill="#953800">Kernel:</tspan><tspan x="625" y="110" fill="#6e7781">...</tspan><tspan x="650" y="110" fill="#0550ae">CUDA / Parallel Computing</tspan>
-<tspan x="390" y="130" fill="#6e7781">. </tspan><tspan x="410" y="130" fill="#953800">IDE:</tspan><tspan x="625" y="130" fill="#6e7781">...</tspan><tspan x="650" y="130" fill="#0550ae">VS Code, Neovim</tspan>
+<rect width="1025px" height="530px" fill="#f6f8fa" rx="15"/>
+<g fill="#24292f" font-size="10px"><text x="15" y="30" textLength="355" lengthAdjust="spacingAndGlyphs">          .    ..  .....        .:.   .. ..........        </text>
+<text x="15" y="42" textLength="355" lengthAdjust="spacingAndGlyphs">          ...... ..      ..::----==-::.... ..........      </text>
+<text x="15" y="54" textLength="355" lengthAdjust="spacingAndGlyphs">      ....... .   ::.::-=*%%%#**##%##+-:--:. .........     </text>
+<text x="15" y="66" textLength="355" lengthAdjust="spacingAndGlyphs">     . .    ..  .::=+++*****##*++++****++==:...........    </text>
+<text x="15" y="78" textLength="355" lengthAdjust="spacingAndGlyphs">    .. ..... .:-=+**####**+=+*####**+****+===::.........   </text>
+<text x="15" y="90" textLength="355" lengthAdjust="spacingAndGlyphs">    ..  .::::-==+++++**#@@@@%#***###*+*****+==-::........  </text>
+<text x="15" y="102" textLength="355" lengthAdjust="spacingAndGlyphs">  .....  .:====----=+*#%#*+*#%@@@@%@@%%#**#*+++=-:... ...  </text>
+<text x="15" y="114" textLength="355" lengthAdjust="spacingAndGlyphs"> .....  ..:-=+***####%%#******+*##%%%%%%%###**+==-:... ....</text>
+<text x="15" y="126" textLength="355" lengthAdjust="spacingAndGlyphs"> ..    .:---=+*#%%%%#*++*###*++##%@@@@%%%%%##*+=----... ...</text>
+<text x="15" y="138" textLength="355" lengthAdjust="spacingAndGlyphs">.  ...::--=+**+++*#**++*#%@@@@@#%%#%%@@@@%%%*++=-----:.. ..</text>
+<text x="15" y="150" textLength="355" lengthAdjust="spacingAndGlyphs">..  .:-==+**+--+#%%%%#**##%%#*=**+*%@@@%@@##*----=---:... .</text>
+<text x="15" y="162" textLength="355" lengthAdjust="spacingAndGlyphs">... ..::-===++%@@%%#####*#%#++###%@%*=--+@***=--=+=---:... </text>
+<text x="15" y="174" textLength="355" lengthAdjust="spacingAndGlyphs">.. .:-::=+*#%%%%%%%@@@%%@@%##@@@@@+-    -=@%***++++=---:.. </text>
+<text x="15" y="186" textLength="355" lengthAdjust="spacingAndGlyphs">.. .:- .++==*%@@@@@@@@@@#%%@@%#+=-       :=*@#%#++++=-::...</text>
+<text x="15" y="198" textLength="355" lengthAdjust="spacingAndGlyphs">.. .-. :-+#*%@@###@@@%+-=@@@+=-:         .:-*@%##*+++=..:..</text>
+<text x="15" y="210" textLength="355" lengthAdjust="spacingAndGlyphs">.. .:..:-+#%%@*====--. :==-:              .:-@@###**+=:.:..</text>
+<text x="15" y="222" textLength="355" lengthAdjust="spacingAndGlyphs">....-=+*#*#%@#-:=**==---:         :---==+=-::+@%%##*===-:..</text>
+<text x="15" y="234" textLength="355" lengthAdjust="spacingAndGlyphs"> ..:-=+=+%%@@=:-*===+*%%#=.     -+%%%*=---++--#@%%#===-::::</text>
+<text x="15" y="246" textLength="355" lengthAdjust="spacingAndGlyphs"> :::::=--*%@@=.--:--:--===-.    ---=--:::.:---+@%%+-=-:..::</text>
+<text x="15" y="258" textLength="355" lengthAdjust="spacingAndGlyphs">.....:-=-=@@@-:-=#--@%*-=-=-   .----*@%=-#=::-+@@#--=:.....</text>
+<text x="15" y="270" textLength="355" lengthAdjust="spacingAndGlyphs">..:.::=+-=%@@-:::-: --: ..--   .. . :-- .-: .:+@@+-==-:....</text>
+<text x="15" y="282" textLength="355" lengthAdjust="spacingAndGlyphs">.:-::-+*+=#@@- .         :::                .:+@%+=+*-:::::</text>
+<text x="15" y="294" textLength="355" lengthAdjust="spacingAndGlyphs"> :----+#**#@@=          .:::                .-#@%*+**=---::</text>
+<text x="15" y="306" textLength="355" lengthAdjust="spacingAndGlyphs">..====+####@@+          .:      .           :-%@%#*#*==---:</text>
+<text x="15" y="318" textLength="355" lengthAdjust="spacingAndGlyphs">..:-=**#%%%@@%  .       ::-:  .-::         .-=%@%###*++==:.</text>
+<text x="15" y="330" textLength="355" lengthAdjust="spacingAndGlyphs">....:-=**#%@@@-  .      :-==-----         .:-#@@@%#%*=-:...</text>
+<text x="15" y="342" textLength="355" lengthAdjust="spacingAndGlyphs">....  .-=*%@@@%  .. .:-:.....:     .-.   .::=@@@@@%#*=::...</text>
+<text x="15" y="354" textLength="355" lengthAdjust="spacingAndGlyphs">..  :-+#%@@@@@@+  ::.:-----:::::-----:  ..:=@@@@@@%##*+=-:.</text>
+<text x="15" y="366" textLength="355" lengthAdjust="spacingAndGlyphs">.  :+*##%%@@@@@@#: ::   .::...  ..     .:-+@@@@@@@%##*+==::</text>
+<text x="15" y="378" textLength="355" lengthAdjust="spacingAndGlyphs">  .:-*##%%@@@@@@@@--::.. .::--::.    .:-=+@@@@@@%%%##*+==:.</text>
+<text x="15" y="390" textLength="355" lengthAdjust="spacingAndGlyphs">   ::-+#%%%##@@@@@-==-:.            :-=+==@@@@@%##%#**+-:::</text>
+<text x="15" y="402" textLength="355" lengthAdjust="spacingAndGlyphs"> .::::--*%%##@@@@@--=++=-:        :-++=--=@@@@@#*#%#*=-::::</text>
+<text x="15" y="414" textLength="355" lengthAdjust="spacingAndGlyphs">..:------=*%%%@@@@+---=+++========++=-::-=@@@@###%*=-::::::</text>
+<text x="15" y="426" textLength="355" lengthAdjust="spacingAndGlyphs">.:::--======*#%@%*+=---===+**##*+=---:.:-=+@@%##+=-----:::.</text>
+<text x="15" y="438" textLength="355" lengthAdjust="spacingAndGlyphs">:::-----=++====*@%+=-----=====-----:..:--=%%#+=====---:::::</text>
+<text x="15" y="450" textLength="355" lengthAdjust="spacingAndGlyphs">.::-=======+++===+*+=------==-----:..:-=*%*=========-----::</text>
+<text x="15" y="462" textLength="355" lengthAdjust="spacingAndGlyphs">..::-=+***++++*++==++==----------:.:-=**+===+++++++*+=--:..</text>
+<text x="15" y="474" textLength="355" lengthAdjust="spacingAndGlyphs">...:--=+##%%#****#+++++==-:----:::-=+++++*****##%##+=--:...</text>
+<text x="15" y="486" textLength="355" lengthAdjust="spacingAndGlyphs">...::---=*#%%@@@%%:+%*++++-:::---+++++%=-@%%%%%%#+=---::...</text>
+<text x="15" y="498" textLength="355" lengthAdjust="spacingAndGlyphs">....:----=+*###%@@-=@%%#***+=+++***#%@@-=@%%###*+=----:....</text>
+<text x="15" y="510" textLength="355" lengthAdjust="spacingAndGlyphs">....::-=====+**##@-=@%%%@%#*##**#%@%%%@-=%****+=====-::....</text></g>
+<text x="390" y="30" fill="#24292f"><tspan x="390" y="30">parth@sinhaparth5</tspan> -——————————————————————————————————-—-
+<tspan x="390" y="50" fill="#6e7781">. </tspan><tspan x="410" y="50" fill="#953800">OS:</tspan><tspan x="585" y="50" fill="#6e7781">...</tspan><tspan x="615" y="50" fill="#0550ae">Linux</tspan>
+<tspan x="390" y="70" fill="#6e7781">. </tspan><tspan x="410" y="70" fill="#953800">Location:</tspan><tspan x="585" y="70" fill="#6e7781">...</tspan><tspan x="615" y="70" fill="#0550ae">United Kingdom</tspan>
+<tspan x="390" y="90" fill="#6e7781">. </tspan><tspan x="410" y="90" fill="#953800">Host:</tspan><tspan x="585" y="90" fill="#6e7781">...</tspan><tspan x="615" y="90" fill="#0550ae">GPU Architecture Student</tspan>
+<tspan x="390" y="110" fill="#6e7781">. </tspan><tspan x="410" y="110" fill="#953800">Kernel:</tspan><tspan x="585" y="110" fill="#6e7781">...</tspan><tspan x="615" y="110" fill="#0550ae">CUDA / Parallel Computing</tspan>
+<tspan x="390" y="130" fill="#6e7781">. </tspan><tspan x="410" y="130" fill="#953800">IDE:</tspan><tspan x="585" y="130" fill="#6e7781">...</tspan><tspan x="615" y="130" fill="#0550ae">VS Code, Neovim</tspan>
 <tspan x="390" y="150" fill="#6e7781">. </tspan>
-<tspan x="390" y="170" fill="#6e7781">. </tspan><tspan x="410" y="170" fill="#953800">Languages.Programming:</tspan><tspan x="625" y="170" fill="#6e7781">...</tspan><tspan x="650" y="170" fill="#0550ae">C++, C, Rust, Python</tspan>
-<tspan x="390" y="190" fill="#6e7781">. </tspan><tspan x="410" y="190" fill="#953800">Languages.Web:</tspan><tspan x="625" y="190" fill="#6e7781">...</tspan><tspan x="650" y="190" fill="#0550ae">TypeScript, JavaScript, React</tspan>
-<tspan x="390" y="210" fill="#6e7781">. </tspan><tspan x="410" y="210" fill="#953800">Languages.Real:</tspan><tspan x="625" y="210" fill="#6e7781">...</tspan><tspan x="650" y="210" fill="#0550ae">English</tspan>
+<tspan x="390" y="170" fill="#6e7781">. </tspan><tspan x="410" y="170" fill="#953800">Languages.Top:</tspan><tspan x="585" y="170" fill="#6e7781">...</tspan><tspan x="615" y="170" fill="#0550ae"></tspan><tspan fill="#0550ae">C++ </tspan><tspan fill="#6e7781">34% </tspan><tspan fill="#0550ae">Python </tspan><tspan fill="#6e7781">19% </tspan><tspan fill="#0550ae">TypeScript </tspan><tspan fill="#6e7781">16% </tspan><tspan fill="#0550ae">Go </tspan><tspan fill="#6e7781">10% </tspan>
+<tspan x="390" y="190" fill="#6e7781">. </tspan><tspan x="410" y="190" fill="#953800">Languages.Web:</tspan><tspan x="585" y="190" fill="#6e7781">...</tspan><tspan x="615" y="190" fill="#0550ae">Astro, React</tspan>
+<tspan x="390" y="210" fill="#6e7781">. </tspan><tspan x="410" y="210" fill="#953800">Languages.Real:</tspan><tspan x="585" y="210" fill="#6e7781">...</tspan><tspan x="615" y="210" fill="#0550ae">English</tspan>
 <tspan x="390" y="230" fill="#6e7781">. </tspan>
-<tspan x="390" y="250" fill="#6e7781">. </tspan><tspan x="410" y="250" fill="#953800">Hobbies.Software:</tspan><tspan x="625" y="250" fill="#6e7781">...</tspan><tspan x="650" y="250" fill="#0550ae">GPU kernels, systems programming</tspan>
-<tspan x="390" y="270" fill="#6e7781">. </tspan><tspan x="410" y="270" fill="#953800">Hobbies.Hardware:</tspan><tspan x="625" y="270" fill="#6e7781">...</tspan><tspan x="650" y="270" fill="#0550ae">GPU architecture, performance</tspan>
-<tspan x="390" y="310">- Contact</tspan> -——————————————————————————————————————————————-—-
-<tspan x="390" y="330" fill="#6e7781">. </tspan><tspan x="410" y="330" fill="#953800">Email.Personal:</tspan><tspan x="625" y="330" fill="#6e7781">...</tspan><tspan x="650" y="330" fill="#0550ae">sinhaparth555@gmail.com</tspan>
-<tspan x="390" y="350" fill="#6e7781">. </tspan><tspan x="410" y="350" fill="#953800">Website:</tspan><tspan x="625" y="350" fill="#6e7781">...</tspan><tspan x="650" y="350" fill="#0550ae">parthsinha.com</tspan>
-<tspan x="390" y="370" fill="#6e7781">. </tspan><tspan x="410" y="370" fill="#953800">LinkedIn:</tspan><tspan x="625" y="370" fill="#6e7781">...</tspan><tspan x="650" y="370" fill="#0550ae">parth-sinha18</tspan>
-<tspan x="390" y="390" fill="#6e7781">. </tspan><tspan x="410" y="390" fill="#953800">X:</tspan><tspan x="625" y="390" fill="#6e7781">...</tspan><tspan x="650" y="390" fill="#0550ae">@parth_sinha18</tspan>
-<tspan x="390" y="430">- GitHub Stats</tspan> -—————————————————————————————————————————-—-
-<tspan x="390" y="450" fill="#6e7781">. </tspan><tspan x="410" y="450" fill="#953800">Repos:</tspan><tspan x="625" y="450" fill="#6e7781">...</tspan><tspan x="650" y="450" fill="#0550ae">41</tspan>
-<tspan x="390" y="470" fill="#6e7781">. </tspan><tspan x="410" y="470" fill="#953800">Stars:</tspan><tspan x="625" y="470" fill="#6e7781">...</tspan><tspan x="650" y="470" fill="#0550ae">63</tspan>
-<tspan x="390" y="490" fill="#6e7781">. </tspan><tspan x="410" y="490" fill="#953800">Followers:</tspan><tspan x="625" y="490" fill="#6e7781">...</tspan><tspan x="650" y="490" fill="#0550ae">47</tspan>
-<tspan x="390" y="510" fill="#6e7781">. </tspan><tspan x="410" y="510" fill="#953800">Current mode:</tspan><tspan x="590" y="510" fill="#6e7781">............</tspan><tspan x="650" y="510" fill="#1a7f37">CUDA++</tspan><tspan x="730" y="510" fill="#cf222e">latency--</tspan></text>
+<tspan x="390" y="250" fill="#6e7781">. </tspan><tspan x="410" y="250" fill="#953800">Hobbies.Software:</tspan><tspan x="585" y="250" fill="#6e7781">...</tspan><tspan x="615" y="250" fill="#0550ae">GPU kernels, systems programming</tspan>
+<tspan x="390" y="270" fill="#6e7781">. </tspan><tspan x="410" y="270" fill="#953800">Hobbies.Hardware:</tspan><tspan x="585" y="270" fill="#6e7781">...</tspan><tspan x="615" y="270" fill="#0550ae">GPU architecture, performance</tspan>
+<tspan x="390" y="310">- Contact</tspan> -——————————————————————————————————————————————————-—-
+<tspan x="390" y="330" fill="#6e7781">. </tspan><tspan x="410" y="330" fill="#953800">Email.Personal:</tspan><tspan x="585" y="330" fill="#6e7781">...</tspan><tspan x="615" y="330" fill="#0550ae">sinhaparth555@gmail.com</tspan>
+<tspan x="390" y="350" fill="#6e7781">. </tspan><tspan x="410" y="350" fill="#953800">Website:</tspan><tspan x="585" y="350" fill="#6e7781">...</tspan><tspan x="615" y="350" fill="#0550ae">parthsinha.com</tspan>
+<tspan x="390" y="370" fill="#6e7781">. </tspan><tspan x="410" y="370" fill="#953800">LinkedIn:</tspan><tspan x="585" y="370" fill="#6e7781">...</tspan><tspan x="615" y="370" fill="#0550ae">parth-sinha18</tspan>
+<tspan x="390" y="390" fill="#6e7781">. </tspan><tspan x="410" y="390" fill="#953800">X:</tspan><tspan x="585" y="390" fill="#6e7781">...</tspan><tspan x="615" y="390" fill="#0550ae">@parth_sinha18</tspan>
+<tspan x="390" y="430">- GitHub Stats</tspan> -—————————————————————————————————————————————-—-
+<tspan x="390" y="450" fill="#6e7781">. </tspan><tspan x="410" y="450" fill="#953800">Repos:</tspan><tspan x="585" y="450" fill="#6e7781">...</tspan><tspan x="615" y="450" fill="#0550ae">41</tspan>
+<tspan x="390" y="470" fill="#6e7781">. </tspan><tspan x="410" y="470" fill="#953800">Stars:</tspan><tspan x="585" y="470" fill="#6e7781">...</tspan><tspan x="615" y="470" fill="#0550ae">63</tspan>
+<tspan x="390" y="490" fill="#6e7781">. </tspan><tspan x="410" y="490" fill="#953800">Followers:</tspan><tspan x="585" y="490" fill="#6e7781">...</tspan><tspan x="615" y="490" fill="#0550ae">47</tspan>
+<tspan x="390" y="510" fill="#6e7781">. </tspan><tspan x="410" y="510" fill="#953800">Current mode:</tspan><tspan x="585" y="510" fill="#6e7781">...</tspan><tspan x="615" y="510" fill="#1a7f37">CUDA++</tspan><tspan x="695" y="510" fill="#cf222e">latency--</tspan></text>
 </svg>
