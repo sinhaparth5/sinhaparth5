@@ -2,7 +2,7 @@
 """Build Andrew6rant-style light/dark profile cards for sinhaparth5."""
 import html, json, os, urllib.request
 from pathlib import Path
-from PIL import Image, ImageOps
+from PIL import Image, ImageChops, ImageFilter, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 USERNAME = os.environ.get("GITHUB_REPOSITORY_OWNER", "sinhaparth5")
@@ -10,8 +10,9 @@ TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
 MARKUP = {"HTML", "CSS", "SCSS", "TeX", "Jupyter Notebook", "Dockerfile", "Makefile", "CMake"}
 # Portrait box: x 15..370, y 30..510. Monospace glyphs are ~0.6em wide, so sample
 # the photo at the box's real pixel aspect, not a square grid, or it renders squeezed.
-P_FONT, P_LINE, P_WIDTH = 10, 12, 355
-P_COLS, P_ROWS = int(P_WIDTH / (P_FONT * 0.6)), 41
+P_FONT, P_LINE, P_WIDTH = 8, 10, 355
+P_COLS, P_ROWS = int(P_WIDTH / (P_FONT * 0.6)), 49
+EDGE = 40  # share of a cell (0-255) covered by outline before it draws as @; lower = more lines
 AVATAR = ROOT/"assets"/"avatar.jpg"
 WIDTH = 1025  # room for "C++ 35% Python 19% TypeScript 17% Go 10%" at the value column
 
@@ -43,15 +44,26 @@ def ascii_portrait(dark):
     # Pad (not crop) the square avatar into the tall panel; cells are ~2x taller than wide.
     src = Image.open(AVATAR).convert("RGB")
     bg = src.getpixel((2, 2))
-    rgb = ImageOps.pad(src, (P_COLS, P_ROWS*2), color=bg).resize((P_COLS, P_ROWS), Image.BOX)
+    big = ImageOps.pad(src, (P_COLS*6, P_ROWS*12), color=bg)  # 6x detail per cell for edge finding
+    rgb = big.resize((P_COLS, P_ROWS), Image.BOX)
     grey = rgb.convert("L")
+    # cartoon outlines (snout, eyes, ears, tail): edges found at full detail, kept if they touch the cell at all
+    # FIND_EDGES flags the image border, so pad with backdrop first and crop it back off
+    # per colour channel, since pink-on-blue is nearly flat in grey
+    r, g, b = (ch.filter(ImageFilter.FIND_EDGES) for ch in ImageOps.expand(big, 2, fill=bg).split())
+    edges = ImageChops.lighter(ImageChops.lighter(r, g), b).crop((2, 2, big.width+2, big.height+2))
+    edges = edges.point(lambda v: 255 if v > 30 else 0).resize((P_COLS, P_ROWS), Image.BOX)  # share of each cell that is line
     # the flat backdrop (corner colour) stays blank; contrast is stretched over the subject only
     subject = {(x, y) for y in range(P_ROWS) for x in range(P_COLS) if sum((c-b)**2 for c,b in zip(rgb.getpixel((x, y)), bg)) >= 70**2}
     vals = sorted(grey.getpixel(xy) for xy in subject) or [0, 255]
     lo, hi = vals[len(vals)//50], vals[-len(vals)//50 - 1]
-    ramp = ".:-=+*#%@" if dark else "@%#*+=-:."  # dark theme: bright = dense; light theme: dark = dense
-    def glyph(v): return ramp[max(0, min(len(ramp)-1, (v-lo)*len(ramp)//max(1, hi-lo+1)))]
-    return ["".join(glyph(grey.getpixel((x, y))) if (x, y) in subject else " " for x in range(P_COLS)) for y in range(P_ROWS)]
+    fill = ".:-=+" if dark else "+=-:."  # fills stay light so outlines stand out; dark theme: bright = denser
+    def glyph(x, y):
+        if edges.getpixel((x, y)) > EDGE: return "@"
+        if (x, y) not in subject: return " "
+        v = grey.getpixel((x, y))
+        return fill[max(0, min(len(fill)-1, (v-lo)*len(fill)//max(1, hi-lo+1)))]
+    return ["".join(glyph(x, y) for x in range(P_COLS)) for y in range(P_ROWS)]
 
 def render(theme, data):
     dark = theme == "dark"
